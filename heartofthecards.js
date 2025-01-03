@@ -1,80 +1,20 @@
-/** 
- * 0 - THE FOOL
- * 1 - THE MAGICIAN
- * 2 - THE HIGH PREISTESS
- * 3 - THE EMPRESS
- * 4 - THE EMPEROR
- * 5 - THE HEIROPHANT
- * 6 - THE LOVERS
- * 7 - THE CHARIOT
- * 8 - STRENGTH
- * 9 - THE HERMIT
- * 10 - WHEEL OF FORTUNE
- * 11 - JUSTICE
- * 12 - THE HANGED MAN
- * 13 - DEATH
- * 14 - TEMPERANCE
- * 15 - THE DEVIL
- * 16 - THE TOWER
- * 17 - THE STAR
- * 18 - THE MOON
- * 19 - THE SUN
- * 20 - JUDGMENT
- * 21 - THE WORLD
- * ACE OF WANDS
-TWO OF WANDS
-THREE OF WANDS
-FOUR OF WANDS
-FIVE OF WANDS
-SIX OF WANDS
-SEVEN OF WANDS
-EIGHT OF WANDS
-NINE OF WANDS
-TEN OF WANDS
-PAGE OF WANDS
-KNIGHT OF WANDS
-QUEEN OF WANDS
-KING OF WANDS
-ACE OF CUPS
-TWO OF CUPS
-THREE OF CUPS
-FOUR OF CUPS
-FIVE OF CUPS
-SIX OF CUPS
-SEVEN OF CUPS
-EIGHT OF CUPS
-NINE OF CUPS
-TEN OF CUPS
-PAGE OF CUPS
-KNIGHT OF CUPS
-QUEEN OF CUPS
-KING OF CUPS
-ACE OF SWORDS
-TWO OF SWORDS
-THREE OF SWORDS
-FOUR OF SWORDS
-FIVE OF SWORDS
-SIX OF SWORDS
-SEVEN OF SWORDS
-EIGHT OF SWORDS
-NINE OF SWORDS
-TEN OF SWORDS
-PAGE OF SWORDS
-KNIGHT OF SWORDS
-QUEEN OF SWORDS
-KING OF SWORDS
-ACE OF PENTACLES
-TWO OF PENTACLES
-THREE OF PENTACLES
-FOUR OF PENTACLES
-FIVE OF PENTACLES
-SIX OF PENTACLES
-SEVEN OF PENTACLES
-EIGHT OF PENTACLES
-NINE OF PENTACLES
-TEN OF PENTACLES
-PAGE OF PENTACLES
-KNIGHT OF PENTACLES
-QUEEN OF PENTACLES
-KING OF PENTACLES
-*/
+class Card {
+    constructor(title, isReversed) {
+        this.title = title;
+        this.isReversed = isReversed;
+    }
+}
+
+let shuffledDeck = [];
+
+const unshuffledDeck = ["The Fool","The Magician","The High Preistess","The Empress","The Emperor","The Heirophant","The Lovers","The Chariot","Strength","The Hermit","Wheel Of Fortune","Justice","The Hanged Man","Death","Temperance","The Devil","The Tower","The Star","The Moon","The Sun","Judgment","The World","Ace Of Wands","Two Of Wands","Three Of Wands","Four Of Wands","Five Of Wands","Six Of Wands","Seven Of Wands","Eight Of Wands","Nine Of Wands","Ten Of Wands","Page Of Wands","Knight Of Wands","Queen Of Wands","King Of Wands","Ace Of Cups","Two Of Cups","Three Of Cups","Four Of Cups","Five Of Cups","Six Of Cups","Seven Of Cups","Eight Of Cups","Nine Of Cups","Ten Of Cups","Page Of Cups","Knight Of Cups","Queen Of Cups","King Of Cups","Ace Of Swords","Two Of Swords","Three Of Swords","Four Of Swords","Five Of Swords","Six Of Swords","Seven Of Swords","Eight Of Swords","Nine Of Swords","Ten Of Swords","Page Of Swords","Knight Of Swords","Queen Of Swords","King Of Swords","Ace Of Pentacles","Two Of Pentacles","Three Of Pentacles","Four Of Pentacles","Five Of Pentacles","Six Of Pentacles","Seven Of Pentacles","Eight Of Pentacles","Nine Of Pentacles","Ten Of Pentacles","Page Of Pentacles","Knight Of Pentacles","Queen Of Pentacles","King Of Pentacles"];
+const shuffledOrder = randoSequence(unshuffledDeck);
+
+function shuffle() {
+    while (shuffledOrder.length > 0) {
+        shuffledDeck.push(
+            new Card(shuffledOrder.pop(),rando(true,false))
+        )
+    }
+    console.log(shuffledDeck);
+}

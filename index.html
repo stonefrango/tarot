@@ -2,24 +2,51 @@
 <html>
     <head>
         <link rel="stylesheet" href="./style.css">
+        <script src="https://randojs.com/2.0.0.js"></script>
+        <script src="heartofthecards.js"></script>
     </head>
     <body>
         <div id="wrapper">
-            <span class="card">
-                <span class="cardtitle">
-                    0 - THE FOOL
-                </span>
-            </span>
-            <span class="card">
-                <span class="cardtitle">
-                    XIII - DEATH
-                </span>
-            </span>
-            <span class="card">
-                <span class="cardtitle">
-                    XX - JUDGEMENT
-                </span>
-            </span>
+            <div class="card cardreversed">
+                <div class="cardcontent ">
+                    <div class="cardfront">
+
+                    </div>
+                    <div class="cardback">
+                        <div class="cardtitle">
+                            0 - THE FOOL
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="cardcontent">
+                    <div class="cardfront">
+
+                    </div>
+                    <div class="cardback">
+                        <div class="cardtitle">
+                            XIII - DEATH
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="cardcontent">
+                    <div class="cardfront">
+
+                    </div>
+                    <div class="cardback">
+                        <div class="cardtitle">
+                            XX - JUDGMENT
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <button type="button" onclick="shuffle()">
+                Shuffle
+            </button>
         </div>
     </body>
 </html>

@@ -6,47 +6,54 @@
         <script src="heartofthecards.js"></script>
     </head>
     <body>
-        <div id="wrapper">
-            <div class="card cardreversed">
-                <div class="cardcontent ">
-                    <div class="cardfront">
+        <header>
+            TAROT
+        </header>
+        <div class="divider"></div>
 
-                    </div>
-                    <div class="cardback">
+        <div id="wrapper">
+            <div class="card">
+                <div class="cardcontent" onclick="this.classList.toggle('flipped');">
+                    <div class="cardfront">
                         <div class="cardtitle">
                             0 - THE FOOL
                         </div>
                     </div>
+                    <div class="cardback">
+
+                    </div>
                 </div>
             </div>
             <div class="card">
-                <div class="cardcontent">
+                <div class="cardcontent" onclick="this.classList.toggle('flipped');">
                     <div class="cardfront">
-
-                    </div>
-                    <div class="cardback">
                         <div class="cardtitle">
                             XIII - DEATH
                         </div>
                     </div>
+                    <div class="cardback">
+
+                    </div>
                 </div>
             </div>
             <div class="card">
-                <div class="cardcontent">
+                <div class="cardcontent" onclick="this.classList.toggle('flipped');">
                     <div class="cardfront">
-
-                    </div>
-                    <div class="cardback">
                         <div class="cardtitle">
                             XX - JUDGMENT
                         </div>
                     </div>
+                    <div class="cardback">
+
+                    </div>
                 </div>
             </div>
-            <br>
-            <button type="button" onclick="shuffle()">
-                Shuffle
-            </button>
+
         </div>
+<div class="buttoncontainer">
+    <button type="button" onclick="shuffle()">
+        Shuffle
+    </button>
+</div>
     </body>
 </html>

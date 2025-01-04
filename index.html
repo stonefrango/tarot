@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./style.css">
         <script src="https://randojs.com/2.0.0.js"></script>
         <script src="heartofthecards.js"></script>
@@ -10,50 +11,67 @@
             TAROT
         </header>
         <div class="divider"></div>
-
         <div id="wrapper">
-            <div class="card">
-                <div class="cardcontent" onclick="this.classList.toggle('flipped');">
-                    <div class="cardfront">
-                        <div class="cardtitle">
-                            0 - THE FOOL
+            <div class="card-spread">
+                <div class="card-spread-title">PAST</div>
+                <div class="card">
+                    <div class="cardcontent" onclick="this.classList.toggle('flipped');">
+                        <div class="cardfront">
+                            <div class="cardtitle">
+                                
+                            </div>
                         </div>
-                    </div>
-                    <div class="cardback">
-
+                        <div class="cardback">
+    
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="card">
-                <div class="cardcontent" onclick="this.classList.toggle('flipped');">
-                    <div class="cardfront">
-                        <div class="cardtitle">
-                            XIII - DEATH
+            <div class="card-spread">
+                <div class="card-spread-title">PRESENT</div>
+                <div class="card">
+                    <div class="cardcontent" onclick="this.classList.toggle('flipped');">
+                        <div class="cardfront">
+                            <div class="cardtitle">
+                                XIII - DEATH
+                            </div>
                         </div>
-                    </div>
-                    <div class="cardback">
+                        <div class="cardback">
 
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="card">
-                <div class="cardcontent" onclick="this.classList.toggle('flipped');">
-                    <div class="cardfront">
-                        <div class="cardtitle">
-                            XX - JUDGMENT
+            <div class="card-spread">
+                <div class="card-spread-title">FUTURE</div>
+                <div class="card">
+                    <div class="cardcontent" onclick="this.classList.toggle('flipped');">
+                        <div class="cardfront">
+                            <div class="cardtitle">
+                                XX - JUDGMENT
+                            </div>
+                        </div>
+                        <div class="cardback">
+
                         </div>
                     </div>
-                    <div class="cardback">
-
-                    </div>
                 </div>
+            </div>
+            <div class="deck">
+                
             </div>
 
         </div>
-<div class="buttoncontainer">
-    <button type="button" onclick="shuffle()">
-        Shuffle
-    </button>
-</div>
     </body>
+    <footer>
+        <div id="buttoncontainer">
+            <button type="button" onclick="shuffle()" id="shuffle">
+                Shuffle
+            </button>
+            <button type="button" onclick="deal()" disabled style="display: none;" id="deal">
+                Deal
+            </button>
+        </div>
+        Credits | GitHub
+    </footer>
 </html>

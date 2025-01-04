@@ -1,85 +1,109 @@
+/* TODO: Add mobile view */
+
 header {
     color: white;
     font-size: xx-large;
-    width: 100%;
     justify-content: center;
     display: flex;
     margin: 0 0 15px 0;
+    font-family: Verdana;
+    letter-spacing: .5rem;
 }
 
 body {
     background-color: black;
 }
 
-.divider {
-    width: 100%;
-    background:   linear-gradient(to right, rgba(255,0,0,1) 0%, rgba(255,154,0,1) 10%, rgba(208,222,33,1) 20%, rgba(79,220,74,1) 30%, rgba(63,218,216,1) 40%, rgba(47,201,226,1) 50%, rgba(28,127,238,1) 60%, rgba(95,21,242,1) 70%, rgba(186,12,248,1) 80%, rgba(251,7,217,1) 90%, rgba(255,0,0,1) 100%) 
-    0 0/200% 100%;
-    min-height: 3px;
-    margin: 0 0 15px 0;
-    animation: a 2s linear infinite;
-}
-
-@keyframes a {
-    to {background-position: -200% 0}
-}
-
 button {
     background: none;
     color: aliceblue;
     outline: auto;
-    margin: 25px 0 0 0;
+    margin: 15px 10px 25px 10px;
     font-size: x-large;
 }
 
-.buttoncontainer {
-    width: 100%;
+button:focus {
+    background-color: red;
+}
+
+footer {
+    color: white;
+    position: absolute;
+    bottom: 1%;
+    text-align: center;
     justify-content: center;
     display: flex;
+    flex-direction: column;
+    width: 99vw;
 }
 
 #wrapper {
-    width: 100%;
-    height: 50%;
-    text-align: center;
-    float: inline-end;
     justify-content: center;
     display: flex;
 }
 
+.divider {
+    width: 100%;
+    background: 
+        linear-gradient(
+            to right, 
+            rgba(255,0,0,1) 0%, 
+            rgba(255,154,0,1) 10%, 
+            rgba(208,222,33,1) 20%, 
+            rgba(79,220,74,1) 30%, 
+            rgba(63,218,216,1) 40%, 
+            rgba(47,201,226,1) 50%, 
+            rgba(28,127,238,1) 60%, 
+            rgba(95,21,242,1) 70%, 
+            rgba(186,12,248,1) 80%, 
+            rgba(251,7,217,1) 90%, 
+            rgba(255,0,0,1) 100%
+        ) 0 0/200% 100%;
+    min-height: 3px;
+    margin: 15px 0 15px 0;
+    animation: a 2s linear infinite;
+    display: flex;
+}
+
+#buttoncontainer {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    transition: all .5s ease-in-out;
+}
+
 .card {
-    height: 3.5in;
-    width: 2.5in;
-    border: 1px rgb(0, 0, 0);
-    border-style: solid;
-    border-radius: 8px;
     margin: 5px 10px;
     perspective: 1000px;
     background-color: transparent;
-    float: left;
-    transition: transform 0.5s;
-    transform-style: preserve-3d;
+    display: flex;
 }
 
 .cardreversed {
-    transform: rotate(180deg);
+    transform: rotate(-180deg);
+    position: inherit;
+}
+
+.card .cardcontent {
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    border: 1px solid rgba(255, 255, 255, 0.637);
+    border-radius: 8px;
+    height: 3.5in;
+    width: 2.5in;
 }
 
 .cardcontent {
     width: 100%;
     height: 100%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-.card .cardcontent {
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: 0.5s;
+.card .cardcontent.cardreversed.flipped {
+    transform: rotateX(180deg);
 }
 
 .card .cardcontent.flipped {
-    transform: rotateY(180deg);
+    transform: rotateY(-180deg);
 }
 
 .cardtitle {
@@ -93,9 +117,6 @@ button {
 }
 
 .cardback {
-    border: 1px rgb(0, 0, 0);
-    border-style: groove;
-    border-radius: 8px;
     background-image: url("./images/cardbackalpha.png");
 }
 
@@ -104,19 +125,35 @@ button {
     color: white;
     transform: rotateY(180deg);
     background: linear-gradient(to bottom, rgb(95, 25, 145),rgb(152, 75, 224));
-    background-size: cover;
-    transform:rotatey(-180deg);
 }
 
 .cardfront, .cardback {
     position: absolute;
     width: 100%;
     height: 100%;
-    border: 1px rgba(255, 255, 255, 0.637);
-    border-style: groove;
-    border-radius: 8px;
+    border-radius: 6px;
     z-index: 2;
     backface-visibility: hidden;  /* W3C */
-    box-shadow: 0 0 10px rgba(0,0,0,0.6);
-    overflow: auto;
+}
+
+.card-spread {
+    border-radius: 8px;
+    height: 100%;
+    margin: 0 5px 0 5px;
+}
+
+.card-spread-title {
+    color: gainsboro;
+    width: 242px;
+    text-align: center;
+    letter-spacing: .5rem;
+    font-size: x-large;
+}
+
+.card {
+    display: none;
+}
+
+@keyframes a {
+    to {background-position: -200% 0}
 }

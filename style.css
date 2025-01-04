@@ -1,5 +1,3 @@
-/* TODO: Add mobile view */
-
 header {
     color: white;
     font-size: xx-large;
@@ -28,18 +26,16 @@ button:focus {
 
 footer {
     color: white;
-    position: absolute;
-    bottom: 1%;
     text-align: center;
     justify-content: center;
     display: flex;
     flex-direction: column;
-    width: 99vw;
 }
 
 #wrapper {
     justify-content: center;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .divider {
@@ -138,22 +134,47 @@ footer {
 
 .card-spread {
     border-radius: 8px;
-    height: 100%;
+    height: 401px;
     margin: 0 5px 0 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-spread-title {
     color: gainsboro;
-    width: 242px;
-    text-align: center;
+    width: 100%;
     letter-spacing: .5rem;
     font-size: x-large;
+    display: flex;
+    justify-content: center;
 }
 
 .card {
     display: none;
 }
 
+.break {
+    flex-basis: 100%;
+    height: 0;
+  }
+
 @keyframes a {
     to {background-position: -200% 0}
 }
+
+@media screen and (max-width: 756px) {
+    header {
+        font-size: 2rem;
+    }
+    html {
+        height: 160vh;
+    }
+    #wrapper {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start
+    }
+    #buttoncontainer {
+        flex-direction: column;
+    }
+  }

@@ -11,6 +11,14 @@
             TAROT
         </header>
         <div class="divider"></div>
+        <div id="buttoncontainer">
+            <button type="button" onclick="shuffle()" id="shuffle">
+                Shuffle
+            </button>
+            <button type="button" onclick="deal()" disabled style="display: none;" id="deal">
+                Deal
+            </button>
+        </div>
         <div id="wrapper">
             <div class="card-spread">
                 <div class="card-spread-title">PAST</div>
@@ -57,21 +65,11 @@
                     </div>
                 </div>
             </div>
-            <div class="deck">
-                
-            </div>
-
+<!--        <div class="deck"></div>    TODO: Add a visual deck to draw from --> 
+            <div class="break"></div>
+            <footer>
+                <span><a href="https://github.com/stonefrango/tarot/blob/main/CREDITS.md">Credits</a> | <a href="https://github.com/stonefrango/tarot">GitHub</a> | Made by Stone.</span>
+            </footer>
         </div>
     </body>
-    <footer>
-        <div id="buttoncontainer">
-            <button type="button" onclick="shuffle()" id="shuffle">
-                Shuffle
-            </button>
-            <button type="button" onclick="deal()" disabled style="display: none;" id="deal">
-                Deal
-            </button>
-        </div>
-        <span><a href="https://github.com/stonefrango/tarot/blob/main/CREDITS.md">Credits</a> | <a href="https://github.com/stonefrango/tarot">GitHub</a> | Made by Stone.</span>
-    </footer>
 </html>

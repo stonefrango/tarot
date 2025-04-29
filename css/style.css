@@ -73,9 +73,10 @@ footer {
     perspective: 1000px;
     background-color: transparent;
     display: flex;
-    transition: transform 0.5s;
+    min-height: 3.5in;
+    min-width: 2.5in;
+    visibility: hidden; 
 }
-
 
 .card.cardreversed {
     transform: rotateZ(-180deg);
@@ -84,7 +85,7 @@ footer {
 
 .card .cardcontent {
     transform-style: preserve-3d;
-    transition: 0.5s; 
+    transition: transform 0.5s;
     border: 1px solid rgba(255, 255, 255, 0.637);
     border-radius: 8px;
     height: 3.5in;
@@ -132,15 +133,17 @@ footer {
     height: 100%;
     border-radius: 6px;
     z-index: 2;
-    backface-visibility: hidden;  /* W3C */
+    backface-visibility: hidden; 
 }
 
 .card-spread {
     border-radius: 8px;
-    height: 401px;
+    height: 401px; 
     margin: 0 5px 0 5px;
     display: flex;
     flex-direction: column;
+    align-items: center; 
+    justify-content: flex-start; 
 }
 
 .card-spread-title {
@@ -150,10 +153,7 @@ footer {
     font-size: x-large;
     display: flex;
     justify-content: center;
-}
-
-.card {
-    display: none;
+    margin-bottom: 10px; 
 }
 
 .break {
@@ -179,5 +179,9 @@ footer {
     }
     #buttoncontainer {
         flex-direction: column;
+    }
+    .card-spread {
+        height: auto; 
+        margin-bottom: 20px; 
     }
   }

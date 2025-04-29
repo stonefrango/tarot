@@ -29,11 +29,12 @@ function shuffle() {
     for (let i = 1; i <= spreadCardCount; i++) {
         const cardElement = document.querySelector("#wrapper > div:nth-child(" + i + ") > div.card");
         if (cardElement) {
-            cardElement.style.display = "none";
+            cardElement.style.visibility = "hidden";
             const cardContentElement = cardElement.querySelector(".cardcontent");
             if (cardContentElement) {
                 cardContentElement.classList.remove('flipped');
-                delete cardContentElement.dataset.listenerAdded;
+                const newCardContentElement = cardContentElement.cloneNode(true);
+                cardContentElement.parentNode.replaceChild(newCardContentElement, cardContentElement);
             }
             cardElement.classList.remove('cardreversed');
         }
@@ -42,7 +43,7 @@ function shuffle() {
     document.getElementById("deal").style.display="unset";
     document.getElementById("deal").removeAttribute("disabled");
     document.getElementById("shuffle").style.display="none";
-    document.getElementById("buttoncontainer").style.display="flex"; 
+    document.getElementById("buttoncontainer").style.display="flex";
 }
 
 function deal() {
@@ -52,21 +53,15 @@ function deal() {
         const currentCardElement = document.querySelector("#wrapper > div:nth-child(" + cardPos + ") > div.card");
         const currentCardContentElement = currentCardElement.querySelector(".cardcontent");
         currentCardContentElement.querySelector(".cardfront .cardtitle").innerHTML = selectedCards[ind].title;
-        currentCardElement.style.display="flex";
+        currentCardElement.style.visibility = "visible";
 
         if (selectedCards[ind].isReversed === true) { 
-            currentCardElement.classList.add("cardreversed"); 
-            console.log("Card is reversed.");
-        } else {
-             console.log("Card is not reversed.");
+            currentCardElement.classList.add("cardreversed");
         }
 
-        if (!currentCardContentElement.dataset.listenerAdded) {
-             currentCardContentElement.addEventListener('click', function() {
-                this.classList.toggle('flipped');
-            });
-            currentCardContentElement.dataset.listenerAdded = 'true'; 
-        }
+        currentCardContentElement.addEventListener('click', function() {
+            this.classList.toggle('flipped');
+        });
 
         ++cardPos;
         --spreadCardCountRemain;

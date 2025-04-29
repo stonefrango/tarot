@@ -40,19 +40,19 @@ footer {
 
 .divider {
     width: 100%;
-    background: 
+    background:
         linear-gradient(
-            to right, 
-            rgba(255,0,0,1) 0%, 
-            rgba(255,154,0,1) 10%, 
-            rgba(208,222,33,1) 20%, 
-            rgba(79,220,74,1) 30%, 
-            rgba(63,218,216,1) 40%, 
-            rgba(47,201,226,1) 50%, 
-            rgba(28,127,238,1) 60%, 
-            rgba(95,21,242,1) 70%, 
-            rgba(186,12,248,1) 80%, 
-            rgba(251,7,217,1) 90%, 
+            to right,
+            rgba(255,0,0,1) 0%,
+            rgba(255,154,0,1) 10%,
+            rgba(208,222,33,1) 20%,
+            rgba(79,220,74,1) 30%,
+            rgba(63,218,216,1) 40%,
+            rgba(47,201,226,1) 50%,
+            rgba(28,127,238,1) 60%,
+            rgba(95,21,242,1) 70%,
+            rgba(186,12,248,1) 80%,
+            rgba(251,7,217,1) 90%,
             rgba(255,0,0,1) 100%
         ) 0 0/200% 100%;
     min-height: 3px;
@@ -73,20 +73,23 @@ footer {
     perspective: 1000px;
     background-color: transparent;
     display: flex;
+    transition: transform 0.5s;
 }
 
-.cardreversed {
-    transform: rotate(-180deg);
-    position: inherit;
+
+.card.cardreversed {
+    transform: rotateZ(-180deg);
 }
+
 
 .card .cardcontent {
     transform-style: preserve-3d;
-    transition: 0.5s;
+    transition: 0.5s; 
     border: 1px solid rgba(255, 255, 255, 0.637);
     border-radius: 8px;
     height: 3.5in;
     width: 2.5in;
+    backface-visibility: hidden;
 }
 
 .cardcontent {
@@ -94,12 +97,12 @@ footer {
     height: 100%;
 }
 
-.card .cardcontent.cardreversed.flipped {
-    transform: rotateX(180deg);
-}
-
 .card .cardcontent.flipped {
     transform: rotateY(-180deg);
+}
+
+.card.cardreversed .cardcontent.flipped {
+    transform: rotateY(180deg);
 }
 
 .cardtitle {
@@ -108,12 +111,12 @@ footer {
     text-align: center;
     top: 70%;
     background: rgba(0, 0, 0, 50%);
-    display: block; 
+    display: block;
     color: white;
 }
 
 .cardback {
-    background-image: url("./images/cardbackalpha.png");
+    background-image: url("../images/cardbackalpha.png");
 }
 
 .cardfront {

@@ -71,6 +71,7 @@ footer {
     justify-content: center;
     display: flex;
     transition: all .5s ease-in-out;
+    height: 100%;
 }
 
 .card {

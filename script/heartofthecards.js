@@ -1,6 +1,6 @@
 class Card {
     constructor(title, isReversed) {
-        this.title = (typeof title === 'object' && title !== null && title.hasOwnProperty('value')) ? title.value : title;
+        this.card = (typeof title === 'object' && title !== null && title.hasOwnProperty('value')) ? title.value : title;
         this.isReversed = isReversed;
     }
 }
@@ -11,7 +11,7 @@ let spreadCardCount = 3;
 let spreadCardCountRemain = spreadCardCount;
 let cardPos = 1; 
 
-const unshuffledDeck = ["0 - The Fool","I - The Magician","II - The High Preistess","III - The Empress","IV - The Emperor","V - The Heirophant","VI - The Lovers","VII - The Chariot","VIII - Strength","IX - The Hermit","X - Wheel Of Fortune","XI - Justice","XII - The Hanged Man","XIII - Death","XIV - Temperance","XV - The Devil","XVI - The Tower","XVII - The Star","XVIII - The Moon","XIX - The Sun","XX - Judgment","XXI - The World","Ace Of Wands","Two Of Wands","Three Of Wands","Four Of Wands","Five Of Wands","Six Of Wands","Seven Of Wands","Eight Of Wands","Nine Of Wands","Ten Of Wands","Page Of Wands","Knight Of Wands","Queen Of Wands","King Of Wands","Ace Of Cups","Two Of Cups","Three Of Cups","Four Of Cups","Five Of Cups","Six Of Cups","Seven Of Cups","Eight Of Cups","Nine Of Cups","Ten Of Cups","Page Of Cups","Knight Of Cups","Queen Of Cups","King Of Cups","Ace Of Swords","Two Of Swords","Three Of Swords","Four Of Swords","Five Of Swords","Six Of Swords","Seven Of Swords","Eight Of Swords","Nine Of Swords","Ten Of Swords","Page Of Swords","Knight Of Swords","Queen Of Swords","King Of Swords","Ace Of Pentacles","Two Of Pentacles","Three Of Pentacles","Four Of Pentacles","Five Of Pentacles","Six Of Pentacles","Seven Of Pentacles","Eight Of Pentacles","Nine Of Pentacles","Ten Of Pentacles","Page Of Pentacles","Knight Of Pentacles","Queen Of Pentacles","King Of Pentacles"];
+const unshuffledDeck = [{numpip:"0",title:"The Fool"},{numpip:"I",title:"The Magician"},{numpip:"III",title:"The High Priestess"},{numpip:"III",title:"The Empress"},{numpip:"IV",title:"The Emperor"},{numpip:"V",title:"The Hierophant"},{numpip:"VI",title:"The Lovers"},{numpip:"VII",title:"The Chariot"},{numpip:"VIII",title:"Strength"},{numpip:"IX",title:"The Hermit"},{numpip:"X",title:"Wheel of Fortune"},{numpip:"XI",title:"Justice"},{numpip:"XII",title:"The Hanged Man"},{numpip:"XIII",title:"Death"},{numpip:"XIV",title:"Temperance"},{numpip:"XV",title:"The Devil"},{numpip:"XVI",title:"The Tower"},{numpip:"XVII",title:"The Star"},{numpip:"XVIII",title:"The Moon"},{numpip:"XIX",title:"The Sun"},{numpip:"XX",title:"Judgment"},{numpip:"XXI",title:"The World"},{numpip:"Ace",title:"Wands"},{numpip:"Two",title:"Wands"},{numpip:"Three",title:"Wands"},{numpip:"Four",title:"Wands"},{numpip:"Five",title:"Wands"},{numpip:"Six",title:"Wands"},{numpip:"Seven",title:"Wands"},{numpip:"Eight",title:"Wands"},{numpip:"Nine",title:"Wands"},{numpip:"Ten",title:"Wands"},{numpip:"Page",title:"Wands"},{numpip:"Knight",title:"Wands"},{numpip:"Queen",title:"Wands"},{numpip:"King",title:"Wands"},{numpip:"Ace",title:"Cups"},{numpip:"Two",title:"Cups"},{numpip:"Three",title:"Cups"},{numpip:"Four",title:"Cups"},{numpip:"Five",title:"Cups"},{numpip:"Six",title:"Cups"},{numpip:"Seven",title:"Cups"},{numpip:"Eight",title:"Cups"},{numpip:"Nine",title:"Cups"},{numpip:"Ten",title:"Cups"},{numpip:"Page",title:"Cups"},{numpip:"Knight",title:"Cups"},{numpip:"Queen",title:"Cups"},{numpip:"King",title:"Cups"},{numpip:"Ace",title:"Swords"},{numpip:"Two",title:"Swords"},{numpip:"Three",title:"Swords"},{numpip:"Four",title:"Swords"},{numpip:"Five",title:"Swords"},{numpip:"Six",title:"Swords"},{numpip:"Seven",title:"Swords"},{numpip:"Eight",title:"Swords"},{numpip:"Nine",title:"Swords"},{numpip:"Ten",title:"Swords"},{numpip:"Page",title:"Swords"},{numpip:"Knight",title:"Swords"},{numpip:"Queen",title:"Swords"},{numpip:"King",title:"Swords"},{numpip:"Ace",title:"Pentacles"},{numpip:"Two",title:"Pentacles"},{numpip:"Three",title:"Pentacles"},{numpip:"Four",title:"Pentacles"},{numpip:"Five",title:"Pentacles"},{numpip:"Six",title:"Pentacles"},{numpip:"Seven",title:"Pentacles"},{numpip:"Eight",title:"Pentacles"},{numpip:"Nine",title:"Pentacles"},{numpip:"Ten",title:"Pentacles"},{numpip:"Page",title:"Pentacles"},{numpip:"Knight",title:"Pentacles"},{numpip:"Queen",title:"Pentacles"},{numpip:"King",title:"Pentacles"}];
 
 function shuffle() {
     shuffledDeck = [];
@@ -19,7 +19,7 @@ function shuffle() {
     cardPos = 1; 
     spreadCardCountRemain = spreadCardCount; 
     const currentShuffledOrder = randoSequence(unshuffledDeck);
-
+    
     while (currentShuffledOrder.length > 0) {
         shuffledDeck.push(
             new Card(currentShuffledOrder.pop(), rando(true, false))
@@ -52,7 +52,7 @@ function deal() {
         selectedCards.push(shuffledDeck.pop());
         const currentCardElement = document.querySelector("#wrapper > div:nth-child(" + cardPos + ") > div.card");
         const currentCardContentElement = currentCardElement.querySelector(".cardcontent");
-        currentCardContentElement.querySelector(".cardfront .cardtitle").innerHTML = selectedCards[ind].title;
+        currentCardContentElement.querySelector(".cardfront .cardtitle").innerHTML = (selectedCards[ind].card.title == "Swords" || selectedCards[ind].card.title == "Wands" || selectedCards[ind].card.title == "Pentacles" ? selectedCards[ind].card.numpip + " of " + selectedCards[ind].card.title : selectedCards[ind].card.numpip + " - " + selectedCards[ind].card.title);
         currentCardElement.style.visibility = "visible";
 
         if (selectedCards[ind].isReversed === true) { 

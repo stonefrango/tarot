@@ -68,6 +68,7 @@ function deal() {
 
         if (spreadCardCountRemain === 0) { 
             document.getElementById("buttoncontainer").style.display="none";
+            document.getElementById("retry").style.display="flex";
         }
     }
 }

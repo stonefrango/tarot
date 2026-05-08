@@ -30,9 +30,6 @@ button:focus {
 footer {
     color: white;
     text-align: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
     margin-top: auto;
 }
 
@@ -168,7 +165,7 @@ footer {
 
 
 hr {
-    display: block;
+    display: block !important; 
     height: 1px;
     border: 0;
     border-top: 1px solid #ccc;

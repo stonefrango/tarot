@@ -4,7 +4,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./css/style.css">
         <script src="./script/rando-min.js"></script>
-        <script src="./script/heartofthecards.js"></script>
+        <script src="./script/gallerymode.js"></script>
+        <style>
+            .card-spread {
+                margin: 0 25px 0 25px;
+            }
+        </style>
     </head>
     <body>
         <header>
@@ -13,22 +18,7 @@
         <div class="divider"></div>
         <div id="wrapper">
             <div class="card-spread">
-                <div class="card-spread-title">PAST</div>
-                <div class="card">
-                    <div class="cardcontent">
-                        <div class="cardfront">
-                            <div class="cardtitle">
-
-                            </div>
-                        </div>
-                        <div class="cardback">
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-spread">
-                <div class="card-spread-title">PRESENT</div>
+                <div class="card-spread-title">II - THE HIGH PRIESTESS</div>
                 <div class="card">
                      <div class="cardcontent">
                         <div class="cardfront">
@@ -43,7 +33,7 @@
                 </div>
             </div>
             <div class="card-spread">
-                <div class="card-spread-title">FUTURE</div>
+                <div class="card-spread-title">III - THE EMPRESS</div>
                 <div class="card">
                      <div class="cardcontent">
                         <div class="cardfront">
@@ -59,10 +49,7 @@
             </div>
             <div class="break"></div>
         <div id="buttoncontainer">
-            <button type="button" onclick="shuffle()" id="shuffle">
-                Shuffle
-            </button>
-            <button type="button" onclick="deal()" disabled style="display: none;" id="deal">
+            <button type="button" onclick="deal()" id="deal">
                 Deal
             </button>
         </div>
@@ -70,7 +57,7 @@
         </div>
         <footer>
             <hr/>
-            <span><a href="./gallery.html">Art Gallery</a> | <a href="https://github.com/stonefrango/tarot/blob/main/CREDITS.md">Credits</a> | <a href="https://github.com/stonefrango/tarot">GitHub</a> | Made by Stone.</span>
+            <span><a href="./index.html">Return to Tarot</a> | <a href="https://github.com/stonefrango/tarot/blob/main/CREDITS.md">Credits</a> | <a href="https://github.com/stonefrango/tarot">GitHub</a> | Made by Stone.</span>
         </footer>
     </body>
 </html>

@@ -40,7 +40,6 @@ function shuffle() {
     document.getElementById("deal").style.display="unset";
     document.getElementById("deal").removeAttribute("disabled");
     document.getElementById("shuffle").style.display="none";
-    document.getElementById("buttoncontainer").style.display="flex";
 }
 
 function deal() {
@@ -75,7 +74,7 @@ function deal() {
         --spreadCardCountRemain;
 
         if (spreadCardCountRemain === 0) { 
-            document.getElementById("buttoncontainer").style.display="none";
+            document.getElementById("deal").style.display="none";
             document.getElementById("retry").style.display="flex";
         }
     }

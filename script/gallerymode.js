@@ -6,7 +6,7 @@ class Card {
 }
 
 let shuffledDeck = [];
-let selectedCards = [{ numpip: "II", title: "The High Priestess", cardimg: "2.jpg" }, { numpip: "III", title: "The Empress", cardimg: "3.jpg" }];
+let selectedCards = [{ numpip: "0", title: "The Fool", cardimg: "0.jpg" }, { numpip: "I", title: "The Magician", cardimg: "1.jpg" }, { numpip: "II", title: "The High Priestess", cardimg: "2.jpg" }, { numpip: "III", title: "The Empress", cardimg: "3.jpg" }];
 let spreadCardCount = selectedCards.length;
 let spreadCardCountRemain = spreadCardCount;
 let cardPos = 1; 
